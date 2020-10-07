@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.Map;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class FinTrackerTest {
@@ -104,14 +106,50 @@ class FinTrackerTest {
 
     @Test
     void getExpenses() {
+        FinTracker ft = new FinTracker();
+        ft.addEntry("milk", -5.0, 10);
+        ft.addEntry("banana", -20.0, 9);
+        ft.addEntry("cookie", -10.0, 8);
+        ft.addEntry("salary", 20000.0, 9);
+        ft.addEntry("dividend", 20000.0, 8);
+
+        Map <Integer, FinRecord> actual =  ft.getExpenses();
+
+        assertEquals(3, actual.size());
+        assertEquals(-5.0, actual.get(1).getPrice());
+        assertEquals(10, actual.get(1).getMonth());
+        assertEquals("milk", actual.get(1).getName());
     }
 
     @Test
     void getIncome() {
+        FinTracker ft = new FinTracker();
+        ft.addEntry("milk", -5.0, 10);
+        ft.addEntry("banana", -20.0, 9);
+        ft.addEntry("cookie", -10.0, 8);
+        ft.addEntry("salary", 20000.0, 9);
+        ft.addEntry("dividend", 20000.0, 8);
+
+        Map <Integer, FinRecord> actual =  ft.getIncome();
+
+        assertEquals(2, actual.size());
+
+        assertEquals(20000., actual.get(4).getPrice());
+        assertEquals(9, actual.get(4).getMonth());
+        assertEquals("salary", actual.get(4).getName());
     }
 
     @Test
     void getAll() {
+        FinTracker ft = new FinTracker();
+        ft.addEntry("milk", -5.0, 10);
+        ft.addEntry("banana", -20.0, 9);
+        //ft.addEntry("cookie", -10.0, 8);
+        ft.addEntry("salary", 20000.0, 9);
+        ft.addEntry("dividend", 20000.0, 8);
+
+        ft.getAll();
+        assertEquals(4, ft.size());
     }
 
     @Test

@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class FinTracker {
     private final HashMap<Integer, FinRecord> collectionOfRecords;
@@ -41,19 +43,29 @@ public class FinTracker {
         collectionOfRecords.remove(id);
     }
 
+    //filtering all records based on price. Price < 0 means it is expense.
+    //transform map to stream, using filter functionality and than transform back to map
+    public Map<Integer,FinRecord>getExpenses() {
+        return collectionOfRecords.entrySet()
+                .stream()
+                .filter(map -> map.getValue().getPrice() < 0) //filter by value
+                .collect(Collectors.toMap(map -> map.getKey(), map -> map.getValue()));
 
-    public ArrayList<FinRecord> getExpenses() {
-        return null;
 
     }
 
-    public ArrayList<FinRecord> getIncome() {
-        return null;
+    //filtering all records based on price. Price > 0 means it is income.
+    //transform map to stream, using filter functionality and than transform back to map
+    public Map<Integer, FinRecord> getIncome() {
+        return collectionOfRecords.entrySet()
+                .stream()
+                .filter(map -> map.getValue().getPrice() > 0) //filter by value
+                .collect(Collectors.toMap(map -> map.getKey(), map -> map.getValue()));
 
     }
 
-    public ArrayList<FinRecord> getAll() {
-        return null;
+    public Map<Integer,FinRecord> getAll() {
+        return collectionOfRecords;
 
     }
 
