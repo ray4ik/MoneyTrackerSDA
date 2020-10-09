@@ -1,7 +1,17 @@
 public class FinRecord {
 
+    /* This is the structure of the financial record
+       which stores income / expense of particular thing.
+       It stores information about name, price and month
+       of income / expense */
+
+    //name of the entry
     private String name;
+
+    //price of the entry
     private Double price;
+
+    //month of the entry
     private Integer month;
 
     public FinRecord(String name, Double price, Integer month) {
@@ -10,6 +20,8 @@ public class FinRecord {
         this.month = month;
     }
 
+
+    //setters and getters
     public String getName() {
         return name;
     }

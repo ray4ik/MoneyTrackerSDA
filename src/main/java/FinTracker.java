@@ -5,23 +5,34 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class FinTracker {
+
+    //all entries that user input / edit during current run  stored in the map
+    //key is id, which is generated here automatically, value - current financial record
     private final HashMap<Integer, FinRecord> collectionOfRecords;
+
+    //identifier of the entry
     private int id;
 
+
     public FinTracker(){
+        //id starts from 1 and will be incremented during adding new entry
         id = 1;
         collectionOfRecords = new HashMap<>();
     }
 
     public void addEntry(String name, Double price, Integer month)  {
 
-        //generating id here
         FinRecord addRecord = new FinRecord(name, price, month);
+        //generation of id for the new entry and add them to the map
         collectionOfRecords.put(id++, addRecord);
     }
 
     public void updateEntry(Integer id, String name, Double price, Integer month) {
+
+        //extracting entry bu id
         FinRecord tmpRecord = collectionOfRecords.get(id);
+
+        //if entry exits, need to updte it 
         if (tmpRecord != null) {
             if (name != null) {
                 tmpRecord.setName(name);
