@@ -3,8 +3,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.io.Serializable;
 
-public class FinTracker {
+public class FinTracker implements Serializable{
 
     //all entries that user input / edit during current run  stored in the map
     //key is id, which is generated here automatically, value - current financial record
@@ -32,7 +33,7 @@ public class FinTracker {
         //extracting entry bu id
         FinRecord tmpRecord = collectionOfRecords.get(id);
 
-        //if entry exits, need to updte it 
+        //if entry exits, need to updte it
         if (tmpRecord != null) {
             if (name != null) {
                 tmpRecord.setName(name);

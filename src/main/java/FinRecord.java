@@ -1,4 +1,6 @@
-public class FinRecord {
+import java.io.Serializable;
+
+public class FinRecord implements Serializable {
 
     /* This is the structure of the financial record
        which stores income / expense of particular thing.
