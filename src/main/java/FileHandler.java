@@ -5,9 +5,9 @@ public class FileHandler implements Serializable {
 
     String path;
 
-    FileHandler() {
+    FileHandler(String filename) {
         //found out the path - get current folder of the project
-        path = System.getProperty("user.dir") + "/data";
+        this.path = System.getProperty("user.dir") + "/" + filename;
     }
 
     public FinTracker loadFromFile () throws IOException, ClassNotFoundException {

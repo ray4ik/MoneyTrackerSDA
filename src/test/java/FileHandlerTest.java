@@ -10,7 +10,7 @@ class FileHandlerTest {
         ft.addEntry("milk", 12., 10);
         ft.addEntry("tomato", 20., 10);
 
-        FileHandler fh = new FileHandler();
+        FileHandler fh = new FileHandler("dataTest");
         fh.writeToFile(ft);
 
         FinTracker actual = fh.loadFromFile();
