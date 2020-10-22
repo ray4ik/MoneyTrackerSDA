@@ -146,8 +146,7 @@ public class CmdUI {
 
             System.out.println("Enter new month");
 
-            // TODO use readMonthFromCmd
-            int newMonth = readIntFromCmd(reader, "Incorrect month, please try again with month");
+            int newMonth = readMonthFromCmd(reader);
 
             System.out.println("Updating item...");
             finTracker.updateEntry(id, newName, newPrice, newMonth);
@@ -225,22 +224,7 @@ public class CmdUI {
             }
         }
 
-        //TODO refactor, use readMonthFromCmd function
-        int month;
-        System.out.println("Add number of month (1 = Jan, 12 = Dec)");
-        while(true) {
-            try {
-                month = Integer.parseInt(reader.readLine());
-                if ( month >= 1  && month <= 12) {
-                    break;
-                }
-                else {
-                    System.out.println("Incorrect month, please insert number from 1 to 12... ");
-                }
-            } catch (Exception ex) {
-                System.out.println("Incorrect month, please insert number from 1 to 12... ");
-            }
-        }
+        int month = readMonthFromCmd(reader);
 
         System.out.println("Item is saving....");
         if (isExpense)
@@ -303,7 +287,22 @@ public class CmdUI {
          return name;
     }
 
-    int readMonthFromCmd(BufferedReader readBuffer, String message) {
-        return 0;
+    int readMonthFromCmd(BufferedReader readBuffer) {
+        int month;
+        System.out.println("Input month (1 = Jan, 12 = Dec)");
+        while(true) {
+            try {
+                month = Integer.parseInt(readBuffer.readLine());
+                if ( month >= 1  && month <= 12) {
+                    break;
+                }
+                else {
+                    System.out.println("Incorrect month, please insert number from 1 to 12... ");
+                }
+            } catch (Exception ex) {
+                System.out.println("Incorrect month, please insert number from 1 to 12... ");
+            }
+        }
+        return month;
     }
 }

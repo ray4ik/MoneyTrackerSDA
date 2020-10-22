@@ -52,32 +52,3 @@ public class FileHandler implements Serializable {
     }
 }
 
-
-
-
-
-
-    //String path = new File(".").getCanonicalPath();
-
-   /* public void LoadFromFile ()
-    {
-
-    }
-
-    public void WriteToFile(ArrayList<FinTracker> list)
-    {
-        try {
-            FileOutputStream file = new FileOutputStream(path + "");
-            ObjectOutputStream output = new ObjectOutputStream(file);
-            // writes objects to output stream
-            output.writeObject(list);
-
-            output.close();
-            file.close();
-        }
-        catch(IOException e)
-        {
-            System.out.println("File doesn't found " +  e);
-        }
-    } */
-
