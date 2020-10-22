@@ -161,4 +161,18 @@ class FinTrackerTest {
 
         assertEquals(3, ft.size());
     }
+
+    @Test
+    void getTotalBalance() {
+
+        FinTracker ft = new FinTracker();
+        ft.addEntry("milk", -5.0, 10);
+        ft.addEntry("banana", -20.0, 9);
+        ft.addEntry("salary", 10000., 8);
+        ft.addEntry("stock", 100., 10);
+        double actualTotal = ft.getTotalBalance();
+
+        assertEquals(10000+100-20-5, actualTotal);
+
+    }
 }

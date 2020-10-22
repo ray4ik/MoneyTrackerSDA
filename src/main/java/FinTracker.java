@@ -30,11 +30,14 @@ public class FinTracker implements Serializable{
 
     public void updateEntry(Integer id, String name, Double price, Integer month) {
 
-        //extracting entry bu id
+        //extracting entry by id
         FinRecord tmpRecord = collectionOfRecords.get(id);
 
-        //if entry exits, need to updte it
+
+        //if entry exits, need to update it
         if (tmpRecord != null) {
+            System.out.println("Updating item with id " + id);
+            System.out.println("Updating" + tmpRecord.toString());
             if (name != null) {
                 tmpRecord.setName(name);
             }
@@ -85,4 +88,14 @@ public class FinTracker implements Serializable{
         return collectionOfRecords.size();
     }
 
-}
+    public int getTotalBalance() {
+        int sum = 0;
+
+        for (FinRecord value : collectionOfRecords.values()) {
+            sum += value.getPrice();
+        }
+
+        return sum;
+     }
+ }
+
