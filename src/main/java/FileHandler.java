@@ -10,19 +10,29 @@ public class FileHandler implements Serializable {
         this.path = System.getProperty("user.dir") + "/" + filename;
     }
 
+
     public FinTracker loadFromFile () throws IOException, ClassNotFoundException {
 
             // exception can be thrown, it will be handled from calling function
             // Reading the object from a file
-            FileInputStream file = new FileInputStream(path);
-            ObjectInputStream in = new ObjectInputStream(file);
 
-            FinTracker finTracker = (FinTracker)in.readObject();
+            File f = new File(path);
 
-            in.close();
-            file.close();
+            //if the file exist
+            if(f.isFile()) {
 
-            return finTracker;
+                FileInputStream file = new FileInputStream(path);
+                ObjectInputStream in = new ObjectInputStream(file);
+
+                FinTracker finTracker = (FinTracker) in.readObject();
+
+                in.close();
+                file.close();
+
+                return finTracker;
+            }else { // if no, create the empthy file
+                 return new FinTracker();
+            }
     }
 
     public void writeToFile(FinTracker tracker) throws IOException {

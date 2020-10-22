@@ -47,4 +47,8 @@ public class FinRecord implements Serializable {
     public void setMonth(int month) {
         this.month = month;
     }
+
+    public String toString() {
+        return name + " " + price.toString() + " " + month.toString();
+    }
 }
