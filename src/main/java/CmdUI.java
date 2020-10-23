@@ -28,10 +28,10 @@ public class CmdUI {
         try {
             while (true) {
                 //main menu
-                System.out.println("(1) Show items  - All /  Expense / Income)");
+                System.out.println("(1) Show items  - All /  Expense / Income");
                 System.out.println("(2) Add Expense / Income");
                 System.out.println("(3) Edit Item / Delete ");
-                System.out.println("(4) Save and quite");
+                System.out.println("(4) Save and Quite");
 
                 BufferedReader reader =
                         new BufferedReader(new InputStreamReader(System.in));
@@ -43,7 +43,7 @@ public class CmdUI {
                     case "2" -> addExpenseIncome();
                     case "3" -> EditDeleteItem();
                     case "4" -> {
-                        System.out.println("Saving");
+                        System.out.println("Saving...");
                         save();
                         return;
                     }

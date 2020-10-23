@@ -37,7 +37,7 @@ public class FinTracker implements Serializable{
         //if entry exits, need to update it
         if (tmpRecord != null) {
             System.out.println("Updating item with id " + id);
-            System.out.println("Updating" + tmpRecord.toString());
+            System.out.println("Updating " + tmpRecord.toString());
             if (name != null) {
                 tmpRecord.setName(name);
             }
