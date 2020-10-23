@@ -44,7 +44,7 @@ You have currently 0 SEK on your account.
 Option 1 shows all the items. But since you start application for the first time, input "2" to the command line to add the first item. If you want to add expense input "1", else "2".
 
 ```bash
-(1) Show items  - All /  Expense / Income)
+(1) Show items  - All /  Expense / Income
 (2) Add Expense / Income
 (3) Edit Item / Delete 
 (4) Save and quite
@@ -71,7 +71,7 @@ Note. You don't need to care about "-" sign of expenses. Since expenses under "1
 ```bash
 Item is saving....
 Item is saved!
-(1) Show items  - All /  Expense / Income)
+(1) Show items  - All /  Expense / Income
 (2) Add Expense / Income
 (3) Edit Item / Delete 
 (4) Save and quite
@@ -81,7 +81,7 @@ You can Edit items by choosing "3" option in the Main Menu. And than input "1 "
 Item is edited based on item id. When item is created, it receives the id. All ids follow simple sequence. The first item has id = 1, the second one has id = 2 and so on. Follow the instruction from command line to edit item. 
 
 ```bash
-(1) Show items  - All /  Expense / Income)
+(1) Show items  - All /  Expense / Income
 (2) Add Expense / Income
 (3) Edit Item / Delete 
 (4) Save and quite
@@ -107,7 +107,7 @@ Updating car -100000.0 1
 You can Delete items by choosing "3" option in the Main Menu. And than input "2 "
 Item is deleted based on item id. When item is created, it receives the id. All ids follow simple sequence. The first item has id = 1, the second one has id = 2 and so on. Follow the instruction from command line to delete item. 
 ```bash
-(1) Show items  - All /  Expense / Income)
+(1) Show items  - All /  Expense / Income
 (2) Add Expense / Income
 (3) Edit Item / Delete 
 (4) Save and quite
@@ -123,7 +123,7 @@ Entry with id = 2 was deleted
 # How to Save entries and Exit 
 Press "4" from main menu
 ```bash
-(1) Show items  - All /  Expense / Income)
+(1) Show items  - All /  Expense / Income
 (2) Add Expense / Income
 (3) Edit Item / Delete 
 (4) Save and quite
@@ -147,7 +147,7 @@ salary 50000.0 11
 Note. If you choose 1,  to understand what is income and what is expense, expense is marked with sign "-". But when you add the expense, you dont need to enter "-", just use positive values. 
 
 # Notes
-Application handles cases when user input incorrect values, for example, if user input wrong statement (not number) for the price
+Application handles cases when user inputs incorrect values, for example, if user inputs wrong statement (not number) for the price
 
 ```bash
 Enter 1 for inserting expense, 2 - for income 
