@@ -1,3 +1,5 @@
+package moneyTracker;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -92,6 +94,10 @@ public class CmdUI {
         //show item based on users choice
         for (FinRecord value : collectionOfRecords.values()) {
             System.out.println(value.toString());
+        }
+
+        if (collectionOfRecords.size() == 0) {
+            System.out.println("There are no entries in the app yet, use (2) Add item functionality ");
         }
     }
 

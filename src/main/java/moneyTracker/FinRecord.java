@@ -1,3 +1,5 @@
+package moneyTracker;
+
 import java.io.Serializable;
 
 public class FinRecord implements Serializable {

@@ -1,3 +1,5 @@
+package moneyTracker;
+
 import java.io.*;
 import java.util.ArrayList;
 
@@ -5,7 +7,7 @@ public class FileHandler implements Serializable {
 
     String path;
 
-    FileHandler(String filename) {
+    public FileHandler(String filename) {
         //found out the path - get current folder of the project
         this.path = System.getProperty("user.dir") + "/" + filename;
     }
